@@ -10,6 +10,7 @@ function setstate {
 		fi
 	elif [[ "$1" == "off" ]]; then
 		rmmod nvidia_uvm 2>/dev/null
+		rmmod nvidia_drm 2>/dev/null
 		rmmod nvidia_modeset 2>/dev/null
 		rmmod --force nvidia 2>/dev/null
 		tee /proc/acpi/bbswitch<<<OFF > /dev/null
